@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Loja de Bike - Buscar pelo Preço</title>
+
+		<script src='bootstrap\js\jquery.js'></script>
+		<script src='bootstrap\js\LojaDeBike.js'></script>
+		<script src='bootstrap\js\bootstrap.min.js'></script>
+		<link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+	 	<link type="text/css" href="bootstrap\css\LojaDeBike.css" rel="stylesheet">
+	</head>
+	<body>
+		<br><br>
+		<div class="container" style="margin-left:auto; margin-right:auto;">
+			<ul class="nav nav-tabs">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="addBike.html">Adicionar Bike</a></li>
+				<li><a href="alterarBike.html">Alterar Bike</a></li>
+				<li><a href="deleteBike.html">Deletar Bike</a></li>
+				<li class="dropdown ; active ">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="">Buscas<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="buscaNumSerie.html">Buscar Numero de Serie</a></li>
+						<li><a href="buscaEspecBike.html">Buscar Especificação</a></li>
+						<li><a href="buscaMarca.html">Buscar Marca</a></li>
+						<li><a href="buscaPreco.html">Buscar Preco</a></li>
+						<li><a href="buscaTamanho.html">Buscar Tamanho</a></li>
+					</ul>
+				</li>
+			</ul>						
+		</div>
+		<img src="imagens\montainbike4.jpeg"  width="800" height="300"  style="border-radius: 10px; margin: 40px 0 0 230px" >
+		<br>
+		<h1><u>Buscar Bike pelo Preco</u></h1>
+
+		<div class="row">
+			<form method="post" id="form" class="col-md-2">
+					<fieldset>
+						<br />
+						<div class="container-fluid" style="width: 400px; margin: 0px 0 0 425px">
+							<input type="text" id="txtPreco" placeholder="Preço" class="form-control" size="30" tabindex="1"/>
+						</div>
+						<br />
+						<input type="submit" id="buscarPreco" class="btn btn-primary btn-lg active" value="Buscar Preço" style="width: 190px; margin: 0px 0 0 530px"/>
+					</fieldset>
+			</form>
+		</div>
+		
+		<div class="row">
+			<form method="post" id="form" class="col-md-2">
+					<fieldset>
+						<br />
+						<div class="container-fluid" style="width: 400px; margin: 0px 0 0 425px">
+							<input type="text" id="txtPrecoMenor" placeholder="Preco Menor" class="form-control" size="30" tabindex="1"/>
+							<input type="text" id="txtPrecoMaior" placeholder="Preco Maior" class="form-control" size="30" tabindex="1"/>
+						</div>
+						<br />
+						<input type="submit" id="buscarFaixaPreco" class="btn btn-primary btn-lg active" value="Buscar Faixa Preco" style="width: 190px; margin: -10px 0 0 530px"/>
+					</fieldset>
+			</form>
+		</div>
+
+		<div class = "dadosPreco" align="center"></div>
+		<div class = "dadosFaixaPreco" align="center"></div>
+	</body>
+</html>

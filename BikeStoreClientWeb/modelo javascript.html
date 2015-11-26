@@ -1,0 +1,34 @@
+		<script>
+			$(document).ready(function(){
+				$.getJSON("http://127.0.0.1:4567/lojadebike/search/all?format=json&jsoncallback=", function(data) {
+					
+					html = '<table class="table table-striped"><tr><td>Preco</td><td>Cor</td><td>NumSerie</td><td>Tamanho</td><td>Marca</td><td>Ano</td></tr><td>Relação</td><td>Suspensão</td></tr>';
+
+					$.each(data, function(i, item) {
+
+						html +='<tr class = "info">';
+						html += "<td>" + item.preco + "</td>";
+						html += "<td>" + item.cor + "</td>";
+						html += "<td>" + item.numSerie + "</td>";
+						html += "<td>" + item.tamanho + "</td>";
+						html += "<td>" + item.marca + "</td>";
+						html += "<td>" + item.ano + "</td>";
+						html += "<td>" + item.relacao + "</td>";
+						html += "<td>" + item.suspensao + "</td>";
+						html += "</tr>"
+						$('.dadosTodasBike').append("<strong> Preço: </strong> "+item.preco+"<br>");
+						$('.dadosTodasBike').append("<strong> Cor: </strong> "+item.cor+"<br>");
+						$('.dadosTodasBike').append("<strong> Numero Serie: </strong> "+item.numSerie+"<br>");
+						$('.dadosTodasBike').append("<strong> Tamanho: </strong> "+item.tamanho+"<br>");
+						$('.dadosTodasBike').append("<strong> Marca: </strong> "+item.marca+"<br>");
+						$('.dadosTodasBike').append("<strong> Ano: </strong> "+item.ano+"<br>");
+						$('.dadosTodasBike').append("<strong> Relacao: </strong> "+item.relacao+"<br>");
+						$('.dadosTodasBike').append("<strong> Suspensao: </strong> "+item.suspensao+"<br><br>");
+					});
+
+					html += '</table>'
+
+					$('#dadosTodasBike').html(html);
+				});
+			});
+		</script>

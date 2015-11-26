@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Loja de Bike - Página Principal</title>
+
+		<script src='bootstrap\js\jquery.js'></script>
+		<script src='bootstrap\js\LojaDeBike.js'></script>
+		<script src='bootstrap\js\bootstrap.min.js'></script>
+		<link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+	 	<link type="text/css" href="bootstrap\css\LojaDeBike.css" rel="stylesheet">
+
+		<script>
+			$(document).ready(function(){
+				$.getJSON("http://127.0.0.1:4567/lojadebike/search/all?format=json&jsoncallback=", function(data) {
+					
+					$.each(data, function(i, item) {
+						$('.dadosTodasBike').append("<strong> Preço: </strong> "+item.preco+"<br>");
+						$('.dadosTodasBike').append("<strong> Cor: </strong> "+item.cor+"<br>");
+						$('.dadosTodasBike').append("<strong> Numero Serie: </strong> "+item.numSerie+"<br>");
+						$('.dadosTodasBike').append("<strong> Tamanho: </strong> "+item.tamanho+"<br>");
+						$('.dadosTodasBike').append("<strong> Marca: </strong> "+item.marca+"<br>");
+						$('.dadosTodasBike').append("<strong> Ano: </strong> "+item.ano+"<br>");
+						$('.dadosTodasBike').append("<strong> Relacao: </strong> "+item.relacao+"<br>");
+						$('.dadosTodasBike').append("<strong> Suspensao: </strong> "+item.suspensao+"<br><br>");
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<br><br>
+		<div class="container" style="margin-left:auto; margin-right:auto;">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="addBike.html">Adicionar Bike</a></li>
+				<li><a href="alterarBike.html">Alterar Bike</a></li>
+				<li><a href="deleteBike.html">Deletar Bike</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="">Buscas<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="buscaNumSerie.html">Buscar Numero de Serie</a></li>
+						<li><a href="buscaEspecBike.html">Buscar Especificação</a></li>
+						<li><a href="buscaMarca.html">Buscar Marca</a></li>
+						<li><a href="buscaPreco.html">Buscar Preco</a></li>
+						<li><a href="buscaTamanho.html">Buscar Tamanho</a></li>
+					</ul>
+				</li>
+			</ul>						
+		</div>
+		<img src="imagens\montainbike.jpeg"  width="800" height="300"  style="border-radius: 10px; margin: 40px 0 0 230px" >
+		<br>		
+		<h1><u>Loja de Bike</u></h1>
+		<div class="container">
+			<div class="table">
+			<table>
+				<div class = "dadosTodasBike" align="center"></div>
+				<div id = "dadosTodasBike" align="center"></div>
+			</table>				
+		</div>		
+	</body>
+</html>

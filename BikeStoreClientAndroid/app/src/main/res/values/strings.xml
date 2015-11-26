@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AndroidLojeDeBike</string>
+
+    <string name="hello_world"></string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_adicionar_bike">AdicionarBike</string>
+    <string name="title_activity_deletar_bike">deletarBike</string>
+    <string name="title_activity_consultar_bike">consultarBike</string>
+    <string name="title_activity_alterar_bike">alterarBike</string>
+</resources>

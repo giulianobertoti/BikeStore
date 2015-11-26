@@ -1,0 +1,37 @@
+<style type="text/css">
+	.cabecalho{
+		font-weight: bold;
+		text-align: center;
+	}
+	h1{
+		text-align: center;
+		color: #F1A94E;
+		font-family: fantasy: ;
+	}
+	h2{
+		text-align: center;
+		color: #7B8D8E;
+		font-family: Verdana;
+	}
+	
+	h3{
+		text-align: center;
+		color: #44B3C2;
+		font-family: Verdana;
+	}
+	h4{
+		text-align: center;
+		color: #F1A94E;
+		font-family: Verdana;
+	}
+	h5{
+		text-align: center;
+		color: #E45641;
+		font-family: Verdana;
+	}
+	h6{
+		text-align: center;
+		color: #5D4C46;
+		font-family: Verdana;
+	}
+</style>
