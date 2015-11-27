@@ -16,6 +16,7 @@ public class Connection {
 	//this is my json: https://api.myjson.com/bins/2trql
 	// BUSCA TODAS BIKES
 	public LinkedList<Bike> buscaTodasBikes() throws Exception {
+		// set ip of the server for connection
 		String url = "http://192.168.1.31:4567/lojadebike/search/all";
 
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //linha chave para execução das treds
@@ -37,6 +38,7 @@ public class Connection {
 
 	//BUSCA PELO NUM DE SERIE
 	public LinkedList<Bike> buscarNumSerie(String numSerie) throws Exception {
+		// set ip of the server for connection
 		String url = "http://192.168.1.31:4567/lojadebike/search/serie/" +numSerie;
 
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //linha chave para execução das treds
@@ -62,6 +64,7 @@ public class Connection {
 	//ADD UMA BIKE - RETORNA BOOLEANO
 	public boolean addBike(Bike bike) throws Exception {
 		boolean found = false;
+		// set ip of the server for connection
 		String url = "http://192.168.1.31:4567/lojadebike/add/" + bike.getPreco() + "/" + bike.getCor() + "/"
 				+ bike.getNumSerie() + "/" + bike.getSpec().getTamanho() + "/" + bike.getSpec().getMarca() + "/"
 				+ bike.getSpec().getAno() + "/" + bike.getSpec().getRelacao() + "/" + bike.getSpec().getSuspensao();
@@ -94,6 +97,7 @@ public class Connection {
 	//DELETE BIKE - RETORNA BOOLEANO
 	public boolean deletarBike(String numSerie) throws Exception {
 		boolean delete = false;
+		// set ip of the server for connection
 		String url = "http://192.168.1.31:4567/lojadebike/delete/" + numSerie;
 
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //linha chave para execução das treds
@@ -126,6 +130,7 @@ public class Connection {
 	//ALTER BIKE - RETORNA BOOLEANO
 	public boolean alterarBike(String numSerieAntigo, Bike bike) throws Exception{
 		boolean update= false;
+		// set ip of the server for connection
 		String url = "http://192.168.1.31:4567/lojadebike/update/"+numSerieAntigo+
 				"/"+bike.getPreco()+
 				"/"+bike.getCor()+
