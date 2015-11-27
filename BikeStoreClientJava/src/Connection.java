@@ -42,6 +42,7 @@ public class Connection {
 	// ADD BIKE
 	public boolean addBike(Bike bike) throws Exception {
 		boolean found = false;
+		// set ip of the server for connection
 		String url = "http://127.0.0.1:4567/lojadebike/add/" + bike.getPreco() + "/" + bike.getCor() + "/"
 				+ bike.getNumSerie() + "/" + bike.getSpec().getTamanho() + "/" + bike.getSpec().getMarca() + "/"
 				+ bike.getSpec().getAno() + "/" + bike.getSpec().getRelacao() + "/" + bike.getSpec().getSuspensao();
@@ -76,6 +77,7 @@ public class Connection {
 
 	// BUSCA TODAS BIKES
 	public LinkedList<Bike> buscaTodasBikes() throws Exception {
+		// set ip of the server for connection
 		String url = "https://api.myjson.com/bins/2trql";
 
 		URL obj = new URL(url);
@@ -101,6 +103,7 @@ public class Connection {
 
 	// BUSCA NUMSERIE
 	public LinkedList<Bike> buscarNumSerie(String numSerie) throws Exception {
+		// set ip of the server for connection
 		String url = "http://127.0.0.1:4567/lojadebike/search/serie/" + numSerie;
 
 		URL obj = new URL(url);
@@ -128,6 +131,7 @@ public class Connection {
 	// BUSCA ESPECIFICACOES
 	public LinkedList<Bike> buscarSpec(int tamanho, String marca, int ano, String relacao, String suspensao)
 			throws Exception {
+		// set ip of the server for connection
 		String url = "http://127.0.0.1:4567/lojadebike/search/espec/" + tamanho + "/" + marca + "/" + ano + "/"
 				+ relacao + "/" + suspensao;
 
@@ -158,6 +162,7 @@ public class Connection {
 
 	// BUSCA TAMANHO
 	public LinkedList<Bike> buscarTamanho(int tamanho) throws Exception {
+		// set ip of the server for connection
 		String url = "http://127.0.0.1:4567/lojadebike/search/size/" + tamanho;
 
 		URL obj = new URL(url);
@@ -185,6 +190,7 @@ public class Connection {
 
 	// BUSCA FAIXA PRECO
 	public LinkedList<Bike> buscarFaixaPreco(int precoMenor, int precoMaior) throws Exception {
+		// set ip of the server for connection
 		String url = "http://127.0.0.1:4567/lojadebike/search/rangeprice/" + precoMenor + "/" + precoMaior;
 
 		URL obj = new URL(url);
@@ -212,6 +218,7 @@ public class Connection {
 
 	// BUSCA PRECO
 	public LinkedList<Bike> buscarPreco(int preco) throws Exception {
+		// set ip of the server for connection
 		String url = "http://127.0.0.1:4567/lojadebike/search/price/" + preco;
 
 		URL obj = new URL(url);
@@ -242,6 +249,7 @@ public class Connection {
 
 	// BUSCA MARCA
 	public LinkedList<Bike> buscarMarca(String marca) throws Exception {
+		// set ip of the server for connection
 		String url = "http://127.0.0.1:4567/lojadebike/search/brand/" + marca;
 
 		URL obj = new URL(url);
@@ -272,6 +280,7 @@ public class Connection {
 	// DELETE BIKE
 	public boolean deletarBike(String numSerie) throws Exception {
 		boolean delete = false;
+		// set ip of the server for connection
 		String url = "http://127.0.0.1:4567/lojadebike/delete/" + numSerie;
 
 		URL obj = new URL(url);
@@ -307,15 +316,16 @@ public class Connection {
 	// UPDATE BIKE
 	public boolean alterarBike(String numSerieAntigo, Bike bike) throws Exception{
 		boolean update= false;
+		// set ip of the server for connection
 		String url = "http://127.0.0.1/lojadebike/update/"+numSerieAntigo+
-													   "/"+bike.getPreco()+
-													   "/"+bike.getCor()+
-													   "/"+bike.getNumSerie()+
-													   "/"+bike.getSpec().getTamanho()+
-													   "/"+bike.getSpec().getMarca()+
-													   "/"+bike.getSpec().getAno()+
-													   "/"+bike.getSpec().getRelacao()+
-													   "/"+bike.getSpec().getSuspensao();
+								"/"+bike.getPreco()+
+								"/"+bike.getCor()+
+								"/"+bike.getNumSerie()+
+								"/"+bike.getSpec().getTamanho()+
+								"/"+bike.getSpec().getMarca()+
+								"/"+bike.getSpec().getAno()+
+								"/"+bike.getSpec().getRelacao()+
+								"/"+bike.getSpec().getSuspensao();
 		
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
